@@ -49,7 +49,6 @@ public class KamdiaoActivity extends ActionBarActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_kamdiao);
 
-
         Intent i = getIntent();
         final long  kamdiaoId = i.getLongExtra("KAMDIAO_ID", 0);
         kamdiao = KamDiao.get(kamdiaoId);
@@ -80,7 +79,7 @@ public class KamdiaoActivity extends ActionBarActivity {
         });
 
         ImageView kamdiaoImage = (ImageView) findViewById(R.id.kamdiaoImage);
-        ImageButton spekerButton  = (ImageButton)findViewById(R.id.spekerButton);
+
         microphoneButton = (ImageButton)findViewById(R.id.microphoneButton);
         txtText = (TextView) findViewById(R.id.txtText);
 

@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import th.ac.up.mct.thaitoneapp.domain.KamDiao;
@@ -21,6 +22,8 @@ public class KamDiaoWordsActivity extends ActionBarActivity {
     LinearLayout kamdiaoWordsMainLayout;
     LayoutInflater inflater;
 
+    List<KamDiaoWordButton> kamDiaoWordButtons = new ArrayList<KamDiaoWordButton>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,37 +31,37 @@ public class KamDiaoWordsActivity extends ActionBarActivity {
         setContentView(R.layout.activity_kam_diao_words);
 
         inflater = LayoutInflater.from(this);
-        kamdiaoWordsMainLayout = (LinearLayout)findViewById(R.id.KamdiaoWordsMainLayout);
+        kamdiaoWordsMainLayout = (LinearLayout) findViewById(R.id.KamdiaoWordsMainLayout);
 
         Intent intent = getIntent();
         long KamdiaoSetID = intent.getLongExtra("KAMDIAOSET_ID", 0);
 
         //Log.i("KamdiaoSetID", Long.toString(KamdiaoSetID));
         KamDiaoSet set = KamDiaoSet.get(KamdiaoSetID);
-
+        List<KamDiao> kamdiaos = set.kamDiaos();
         View.OnClickListener kamWordOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                KamDiaoWordButton btn = (KamDiaoWordButton)v;
+                KamDiaoWordButton btn = (KamDiaoWordButton) v;
                 //
-                Intent inttentkamdiao = new Intent(KamDiaoWordsActivity.this,KamdiaoActivity.class);
+                Intent inttentkamdiao = new Intent(KamDiaoWordsActivity.this, KamdiaoActivity.class);
                 inttentkamdiao.putExtra("KAMDIAO_ID", btn.getKamDiao().getId());
                 startActivity(inttentkamdiao);
             }
         };
 
+        kamDiaoWordButtons.add((KamDiaoWordButton) findViewById(R.id.kamdiaoImageBtn1));
+        kamDiaoWordButtons.add((KamDiaoWordButton) findViewById(R.id.kamdiaoImageBtn2));
+        kamDiaoWordButtons.add((KamDiaoWordButton) findViewById(R.id.kamdiaoImageBtn3));
+        kamDiaoWordButtons.add((KamDiaoWordButton) findViewById(R.id.kamdiaoImageBtn4));
+        kamDiaoWordButtons.add((KamDiaoWordButton) findViewById(R.id.kamdiaoImageBtn5));
 
-        // เอาค่าออกมาเป็นButton
-        for(KamDiao k : set.kamDiaos()){
-            KamDiaoWordButton kamdiaowordbtn = new KamDiaoWordButton(this);
-            int id = getResources().getIdentifier(k.picture, "drawable", getPackageName());
-            Log.i("ID", Integer.toString(id));
-            kamdiaowordbtn.setBackgroundResource(id);
-            kamdiaowordbtn.setKamDiao(k);
-            kamdiaowordbtn.setLayoutParams(new LinearLayout.LayoutParams(300, 300));
-            // kamdiaoBtn.setText(k.kamThai);
-            kamdiaowordbtn.setOnClickListener(kamWordOnClickListener);
-            kamdiaoWordsMainLayout.addView(kamdiaowordbtn);
+        for (int i = 0; i < kamDiaoWordButtons.size(); i++) {
+            kamDiaoWordButtons.get(i).setKamDiao(kamdiaos.get(i));
+            kamDiaoWordButtons.get(i).setOnClickListener(kamWordOnClickListener);
+            int bid = getResources().getIdentifier(kamdiaos.get(i).picture, "drawable", getPackageName());
+            kamDiaoWordButtons.get(i).setBackgroundResource(bid);
         }
+
     }
 }

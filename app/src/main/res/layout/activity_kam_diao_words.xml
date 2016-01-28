@@ -45,6 +45,56 @@
         android:id="@+id/KamdiaoWordsMainLayout"
         android:gravity="center">
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <th.ac.up.mct.thaitoneapp.ui.KamDiaoWordButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/kamdiaoImageBtn1"
+                />
+
+            <th.ac.up.mct.thaitoneapp.ui.KamDiaoWordButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/kamdiaoImageBtn2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <th.ac.up.mct.thaitoneapp.ui.KamDiaoWordButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/kamdiaoImageBtn3"
+                />
+
+            <th.ac.up.mct.thaitoneapp.ui.KamDiaoWordButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/kamdiaoImageBtn4" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <th.ac.up.mct.thaitoneapp.ui.KamDiaoWordButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/kamdiaoImageBtn5"
+                />
+
+        </LinearLayout>
     </LinearLayout>
     </ScrollView>
 </RelativeLayout>
