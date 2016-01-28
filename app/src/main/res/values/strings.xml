@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ThaiToneApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_kam_diao_set">KamDiaoSetActivity</string>
+    <string name="title_activity_kam_diao_word">KamDiaoWordActivity</string>
+    <string name="title_activity_kam_diao_words">KamDiaoWordsActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_kam_ku_set">KamKuSetActivity</string>
+    <string name="title_activity_kam_group_set">KamGroupSetActivity</string>
+    <string name="title_activity_symbol_set">SymbolSetActivity</string>
+    <string name="title_activity_kam_ku_words">KamKuWordsActivity</string>
+    <string name="title_activity_kam_group_words">KamGroupWordsActivity</string>
+    <string name="title_activity_kamdiao_acitivity">KamdiaoAcitivity</string>
+    <string name="title_activity_kamdiao">KamdiaoActivity</string>
+    <string name="title_activity_kamku">KamkuActivity</string>
+    <string name="title_activity_kamgroup">KamgroupActivity</string>
+</resources>
