@@ -32,7 +32,7 @@ public class KamGroupWordsActivity extends ActionBarActivity {
 
         Intent intent = getIntent();
         long KamgroupSetID = intent.getLongExtra("KAMGROUPSET_ID", 0);
-        KamGroupSet set = KamGroupSet.get(KamgroupSetID);
+        KamGroupSet kamGroupSet = KamGroupSet.get(KamgroupSetID);
 
 
         View.OnClickListener kamgroupWordOnClickListener = new View.OnClickListener() {
@@ -46,7 +46,7 @@ public class KamGroupWordsActivity extends ActionBarActivity {
             }
         };
 
-        for(KamGroup k : set.kamgroups()){
+        for(KamGroup k : kamGroupSet.kamgroups()){
             KamGroupWordButton kamgroupwordbtn = new KamGroupWordButton(this);
             int id = getResources().getIdentifier(k.picture, "drawable", getPackageName());
             Log.i("ID", Integer.toString(id));

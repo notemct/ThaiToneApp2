@@ -25,6 +25,7 @@ import th.ac.up.mct.thaitoneapp.ui.KamkuButton;
 public class KamkuActivity extends ActionBarActivity {
     private ImageButton microphoneButton;
     private ImageButton spekerButton;
+    private ImageButton speakerButtonSentence;
     protected static final int RESULT_SPEECH = 1;
     private TextView txtText;
 
@@ -81,6 +82,28 @@ public class KamkuActivity extends ActionBarActivity {
 
         });
 
+        speakerButtonSentence = (ImageButton)findViewById(R.id.speakButtonSentence);
+        speakerButtonSentence.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mySound !=null){
+
+                    mySound.release();
+
+
+                }
+                int soundid = getResources().getIdentifier(kamKu.soundsentenseth,"raw",getPackageName());
+                mySound = MediaPlayer.create(KamkuActivity.this, soundid);
+                mySound.start();
+                mySound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        mp.release();
+                    }
+                });
+            }
+        });
+
         ImageView kamkuImage = (ImageView) findViewById(R.id.kamkuImage);
         ImageView kamkuImageIPA = (ImageView)findViewById(R.id.kamkuImageIPA);
 
@@ -90,8 +113,8 @@ public class KamkuActivity extends ActionBarActivity {
         int id0 = getResources().getIdentifier(kamKu.picture,"drawable",getPackageName());
         kamkuImage.setBackgroundResource(id0);
 
-        int id1 = getResources().getIdentifier(kamKu.pictureipa,"drawable",getPackageName());
-        kamkuImageIPA.setBackgroundResource(id1);
+       // int id1 = getResources().getIdentifier(kamKu.pictureipa,"drawable",getPackageName());
+        //kamkuImageIPA.setBackgroundResource(id1);
 
         microphoneButton.setOnClickListener(new View.OnClickListener() {
             @Override

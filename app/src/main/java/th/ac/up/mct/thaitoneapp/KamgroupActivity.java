@@ -93,8 +93,8 @@ public class KamgroupActivity extends ActionBarActivity {
         int id0 = getResources().getIdentifier(kamGroup.pictureword, "drawable", getPackageName());
         kamgroupImage.setBackgroundResource(id0);
 
-        int id1 = getResources().getIdentifier(kamGroup.pictureipa,"drawable",getPackageName());
-        kamgroupImageIPA.setBackgroundResource(id1);
+       // int id1 = getResources().getIdentifier(kamGroup.pictureipa,"drawable",getPackageName());
+        //kamgroupImageIPA.setBackgroundResource(id1);
 
         microphoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
