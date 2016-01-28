@@ -16,6 +16,7 @@ import android.view.WindowManager;
 import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.util.List;
@@ -67,8 +68,11 @@ public class KamDiaoSetActivity extends ActionBarActivity {
             //int id=R.drawable.kamset_1_picture;
             Log.i("ID", Integer.toString(id));
             kamdiaosetBn.setBackgroundResource(id);
+            kamdiaosetBn.setScaleType(ImageView.ScaleType.FIT_CENTER);
             kamdiaosetBn.setKamDiaoSet(k);
-            kamdiaosetBn.setLayoutParams(new LinearLayout.LayoutParams(300, 300));
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(300, 300);
+            params.setMargins(0,0,0,10);
+            kamdiaosetBn.setLayoutParams(params);
             kamdiaosetBn.setOnClickListener(kamdiaosetOnclickListener);
             kamdiaoMainLayout.addView(kamdiaosetBn);
         }

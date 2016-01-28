@@ -29,7 +29,7 @@ public class KamdiaoActivity extends ActionBarActivity {
     private TextView txtText;
 
     MediaPlayer mySound;
-
+    KamDiao kamdiao;
     @Override
     protected void onStop() {
         super.onStop();
@@ -49,6 +49,10 @@ public class KamdiaoActivity extends ActionBarActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_kamdiao);
 
+
+        Intent i = getIntent();
+        final long  kamdiaoId = i.getLongExtra("KAMDIAO_ID", 0);
+        kamdiao = KamDiao.get(kamdiaoId);
         //Sound
         spekerButton = (ImageButton)findViewById(R.id.spekerButton);
         spekerButton.setOnClickListener(new View.OnClickListener() {
@@ -58,8 +62,10 @@ public class KamdiaoActivity extends ActionBarActivity {
 
                     mySound.release();
 
+
                 }
-                mySound = MediaPlayer.create(KamdiaoActivity.this, R.raw.kamdiao_1_sound);
+                int soundid = getResources().getIdentifier(kamdiao.soundth,"raw",getPackageName());
+                mySound = MediaPlayer.create(KamdiaoActivity.this, soundid);
                 mySound.start();
                 mySound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
@@ -73,21 +79,12 @@ public class KamdiaoActivity extends ActionBarActivity {
 
         });
 
-
-
-
         ImageView kamdiaoImage = (ImageView) findViewById(R.id.kamdiaoImage);
         ImageButton spekerButton  = (ImageButton)findViewById(R.id.spekerButton);
         microphoneButton = (ImageButton)findViewById(R.id.microphoneButton);
         txtText = (TextView) findViewById(R.id.txtText);
 
-
-
-        Intent intent = getIntent();
-        long kamdiaoId = intent.getLongExtra("KAMDIAO_ID", 0);
-        KamDiao kamDioao = KamDiao.get(kamdiaoId);
-        //currentKamdiao = KamDiao.get(kamdiaoId);
-        int id = getResources().getIdentifier(kamDioao.pictureword,"drawable",getPackageName());
+        int id = getResources().getIdentifier(kamdiao.pictureword,"drawable",getPackageName());
         kamdiaoImage.setBackgroundResource(id);
 
         microphoneButton.setOnClickListener(new View.OnClickListener() {
@@ -128,14 +125,8 @@ public class KamdiaoActivity extends ActionBarActivity {
                     ArrayList<String> text = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 
-                    txtText.setText(text.get(0));
-                    //Logger.i
-//                    if(text.get(0).equals("ขา")){
-//
-//                    }else {
-//
-//                    }
-//
+                    //txtText.setText(text.get(0));
+
 
                 }
                 break;
