@@ -35,7 +35,6 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_below="@+id/header"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/kamkuactivityMainLayout">
@@ -43,7 +42,34 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:id="@+id/kamkuImage" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/speker3"
+                android:id="@+id/spekerButton" />
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/mile3"
+                android:id="@+id/microphoneButton" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/txtText" />
     </LinearLayout>
 
 </RelativeLayout>

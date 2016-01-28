@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.util.List;
@@ -47,8 +48,11 @@ public class KamKuSetActivity extends ActionBarActivity {
 
             int id = getResources().getIdentifier(k.picture, "drawable", getPackageName());
             kamkusetBn.setBackgroundResource(id);
+            kamkusetBn.setScaleType(ImageView.ScaleType.FIT_CENTER);
             kamkusetBn.setKamKuSet(k);
-            kamkusetBn.setLayoutParams(new LinearLayout.LayoutParams(850,300 ));
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(850, 300);
+            params.setMargins(0, 0, 0, 20);
+            kamkusetBn.setLayoutParams(params);
             kamkusetBn.setOnClickListener(kamkusetOnclickListener);
             kamkuMainLayout.addView(kamkusetBn);
         }

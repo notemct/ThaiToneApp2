@@ -29,6 +29,9 @@ public class KamGroup extends Model {
     @Column(name = "PictureWord")
     public String pictureword;
 
+    @Column(name = "SoundTH")
+    public  String soundth;
+
     public static List<KamGroup> getAll(){
         return new Select().from(KamGroup.class).execute();
     }

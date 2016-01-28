@@ -71,7 +71,7 @@ public class KamDiaoSetActivity extends ActionBarActivity {
             kamdiaosetBn.setScaleType(ImageView.ScaleType.FIT_CENTER);
             kamdiaosetBn.setKamDiaoSet(k);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(300, 300);
-            params.setMargins(0,0,0,10);
+            params.setMargins(0,0,0,20);
             kamdiaosetBn.setLayoutParams(params);
             kamdiaosetBn.setOnClickListener(kamdiaosetOnclickListener);
             kamdiaoMainLayout.addView(kamdiaosetBn);

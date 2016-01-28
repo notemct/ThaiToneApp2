@@ -30,6 +30,7 @@ public class KamgroupActivity extends ActionBarActivity {
     private TextView txtText;
 
     MediaPlayer mySound;
+    KamGroup kamGroup;
     @Override
     protected void onStop() {
         super.onStop();
@@ -59,7 +60,8 @@ public class KamgroupActivity extends ActionBarActivity {
                     mySound.release();
 
                 }
-                mySound = MediaPlayer.create(KamgroupActivity.this, R.raw.kamdiao_10_sound);
+                int soundid = getResources().getIdentifier(kamGroup.soundth,"raw",getPackageName());
+                mySound = MediaPlayer.create(KamgroupActivity.this, soundid);
                 mySound.start();
                 mySound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
@@ -82,10 +84,9 @@ public class KamgroupActivity extends ActionBarActivity {
         txtText = (TextView) findViewById(R.id.txtText);
 
 
-
         Intent intent = getIntent();
         long kamkuId = intent.getLongExtra("KAMGROUP_ID", 0);
-        KamGroup kamGroup = KamGroup.get(kamkuId);
+        kamGroup = KamGroup.get(kamkuId);
 
         int id = getResources().getIdentifier(kamGroup.pictureword,"drawable",getPackageName());
         kamgroupImage.setBackgroundResource(id);

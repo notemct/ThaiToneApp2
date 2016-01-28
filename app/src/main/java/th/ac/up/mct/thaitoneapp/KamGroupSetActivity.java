@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.util.List;
@@ -51,9 +52,11 @@ public class KamGroupSetActivity extends ActionBarActivity {
         int id = getResources().getIdentifier(k.picture, "drawable", getPackageName());
         Log.i("ID", Integer.toString(id));
         kamgroupsetBn.setBackgroundResource(id);
+        kamgroupsetBn.setScaleType(ImageView.ScaleType.FIT_CENTER);
         kamgroupsetBn.setKamGroupSet(k);
-        kamgroupsetBn.setLayoutParams(new LinearLayout.LayoutParams(850, 300));
-        kamgroupsetBn.setOnClickListener(kamgroupsetOnclickListener);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(850, 300);
+        params.setMargins(0, 0, 0, 20);
+        kamgroupsetBn.setLayoutParams(params);
         kamgroupMainLayout.addView(kamgroupsetBn);
     }
 }

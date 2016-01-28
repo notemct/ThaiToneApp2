@@ -42,6 +42,9 @@ public class KamKu extends Model {
     @Column(name = "PictureWord")
     public String pictureword;
 
+    @Column(name = "SoundTH")
+    public  String soundth;
+
 
     public static List<KamKu> getAll(){
         return new Select().from(KamKu.class).execute();
