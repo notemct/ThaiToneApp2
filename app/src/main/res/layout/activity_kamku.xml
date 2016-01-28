@@ -45,6 +45,11 @@
             android:layout_gravity="center"
             android:id="@+id/kamkuImage" />
 
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/kamkuImageIPA" />
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
@@ -70,6 +75,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
             android:id="@+id/txtText" />
+
     </LinearLayout>
 
 </RelativeLayout>

@@ -79,12 +79,16 @@ public class KamdiaoActivity extends ActionBarActivity {
         });
 
         ImageView kamdiaoImage = (ImageView) findViewById(R.id.kamdiaoImage);
+        ImageView kamdiaoImageIPA = (ImageView)findViewById(R.id.kamdiaoImageIPA);
 
         microphoneButton = (ImageButton)findViewById(R.id.microphoneButton);
         txtText = (TextView) findViewById(R.id.txtText);
 
-        int id = getResources().getIdentifier(kamdiao.pictureword,"drawable",getPackageName());
-        kamdiaoImage.setBackgroundResource(id);
+        int id0 = getResources().getIdentifier(kamdiao.pictureword,"drawable",getPackageName());
+        kamdiaoImage.setBackgroundResource(id0);
+
+        int id1 = getResources().getIdentifier(kamdiao.pictureipa,"drawable",getPackageName());
+        kamdiaoImageIPA.setBackgroundResource(id1);
 
         microphoneButton.setOnClickListener(new View.OnClickListener() {
             @Override

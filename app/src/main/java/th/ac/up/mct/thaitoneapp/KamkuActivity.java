@@ -82,12 +82,16 @@ public class KamkuActivity extends ActionBarActivity {
         });
 
         ImageView kamkuImage = (ImageView) findViewById(R.id.kamkuImage);
+        ImageView kamkuImageIPA = (ImageView)findViewById(R.id.kamkuImageIPA);
 
         microphoneButton = (ImageButton)findViewById(R.id.microphoneButton);
         txtText = (TextView) findViewById(R.id.txtText);
 
-        int id = getResources().getIdentifier(kamKu.picture,"drawable",getPackageName());
-        kamkuImage.setBackgroundResource(id);
+        int id0 = getResources().getIdentifier(kamKu.picture,"drawable",getPackageName());
+        kamkuImage.setBackgroundResource(id0);
+
+        int id1 = getResources().getIdentifier(kamKu.pictureipa,"drawable",getPackageName());
+        kamkuImageIPA.setBackgroundResource(id1);
 
         microphoneButton.setOnClickListener(new View.OnClickListener() {
             @Override

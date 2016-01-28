@@ -57,6 +57,7 @@ public class KamGroupSetActivity extends ActionBarActivity {
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(850, 300);
         params.setMargins(0, 0, 0, 20);
         kamgroupsetBn.setLayoutParams(params);
+        kamgroupsetBn.setOnClickListener(kamgroupsetOnclickListener);
         kamgroupMainLayout.addView(kamgroupsetBn);
     }
 }

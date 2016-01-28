@@ -53,7 +53,6 @@ public class KamGroupWordsActivity extends ActionBarActivity {
             kamgroupwordbtn.setBackgroundResource(id);
             kamgroupwordbtn.setKamGroup(k);
             kamgroupwordbtn.setLayoutParams(new LinearLayout.LayoutParams(300, 300));
-            // kamdiaoBtn.setText(k.kamThai);
             kamgroupwordbtn.setOnClickListener(kamgroupWordOnClickListener);
             kamgroupWordsMainLayout.addView(kamgroupwordbtn);
         }

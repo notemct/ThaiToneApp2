@@ -29,6 +29,9 @@ public class KamGroup extends Model {
     @Column(name = "PictureWord")
     public String pictureword;
 
+    @Column(name = "PictureIPA")
+    public String pictureipa;
+
     @Column(name = "SoundTH")
     public  String soundth;
 
