@@ -156,12 +156,22 @@ public class KamdiaoActivity extends ActionBarActivity {
 //                    Log.i("compare always true", Integer.toString(sound.compareToIgnoreCase(sound)));
 
                     if (test.equalsIgnoreCase(sound)) {
-                       setContentView(R.layout.activity_popup_true);
+                       //setContentView(R.layout.activity_popup_true);
+
+                        LayoutInflater layoutInflater = (LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+                        View popupView = layoutInflater.inflate(R.layout.activity_popup_true,null);
+                        final PopupWindow popupWindowtrue = new PopupWindow(popupView, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
+                        popupWindowtrue.showAsDropDown(popupView,200,650);
 
                         //Log.i("TEST KAM", "true");
 
                     } else {
-                        setContentView(R.layout.activity_popup_false);
+                        //setContentView(R.layout.activity_popup_false);
+
+                        LayoutInflater layoutInflater = (LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+                        View popupView = layoutInflater.inflate(R.layout.activity_popup_false,null);
+                        final PopupWindow popupWindowtrue = new PopupWindow(popupView, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
+                        popupWindowtrue.showAsDropDown(popupView,200,650);
                         //Log.i("TEST KAM", "false");
                     }
                 }
