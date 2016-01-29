@@ -11,12 +11,13 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.PopupWindow;
+
 import com.activeandroid.ActiveAndroid;
 import java.util.List;
 import th.ac.up.mct.thaitoneapp.domain.KamDiaoSet;
 
 public class MainActivity extends ActionBarActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +27,6 @@ public class MainActivity extends ActionBarActivity {
 
 
         ActiveAndroid.initialize(this);
-
-
-       // Intent startKamdiaoSetActivityIntent = new Intent(MainActivity.this,KamDiaoSetActivity.class);
-        //startActivity(startKamdiaoSetActivityIntent);
 
     }
 
