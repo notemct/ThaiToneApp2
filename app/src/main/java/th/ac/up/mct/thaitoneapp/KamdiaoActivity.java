@@ -13,9 +13,11 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.net.URLDecoder;
 import java.util.ArrayList;
 
 import th.ac.up.mct.thaitoneapp.domain.KamDiao;
@@ -25,11 +27,15 @@ public class KamdiaoActivity extends ActionBarActivity {
 
     private ImageButton microphoneButton;
     private ImageButton spekerButton;
+    private PopupWindow popupWindowtrue;
+    private PopupWindow popupWindowfalse;
+    private LayoutInflater layoutInflater;
     protected static final int RESULT_SPEECH = 1;
     private TextView txtText;
 
     MediaPlayer mySound;
     KamDiao kamdiao;
+
     @Override
     protected void onStop() {
         super.onStop();
@@ -38,7 +44,7 @@ public class KamdiaoActivity extends ActionBarActivity {
                 mySound.stop();
                 mySound.release();
             }
-        }catch (IllegalStateException e){
+        } catch (IllegalStateException e) {
             e.printStackTrace();
         }
     }
@@ -50,23 +56,23 @@ public class KamdiaoActivity extends ActionBarActivity {
         setContentView(R.layout.activity_kamdiao);
 
         Intent i = getIntent();
-        long  kamdiaoId = i.getLongExtra("KAMDIAO_ID", 0);
+        long kamdiaoId = i.getLongExtra("KAMDIAO_ID", 0);
         kamdiao = KamDiao.get(kamdiaoId);
-        Log.i("kamdiaoid",Long.toString(kamdiaoId));
-        Log.i("TEST KAM",kamdiao.kamThai);
+        Log.i("kamdiaoid", Long.toString(kamdiaoId));
+        Log.i("TEST KAM", kamdiao.kamThai);
 
         //Sound
-        spekerButton = (ImageButton)findViewById(R.id.spekerButton);
+        spekerButton = (ImageButton) findViewById(R.id.spekerButton);
         spekerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mySound !=null){
+                if (mySound != null) {
 
                     mySound.release();
 
 
                 }
-                int soundid = getResources().getIdentifier(kamdiao.soundth,"raw",getPackageName());
+                int soundid = getResources().getIdentifier(kamdiao.soundth, "raw", getPackageName());
                 mySound = MediaPlayer.create(KamdiaoActivity.this, soundid);
                 mySound.start();
                 mySound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -82,15 +88,15 @@ public class KamdiaoActivity extends ActionBarActivity {
         });
 
         ImageView kamdiaoImage = (ImageView) findViewById(R.id.kamdiaoImage);
-        ImageView kamdiaoImageIPA = (ImageView)findViewById(R.id.kamdiaoImageIPA);
+        ImageView kamdiaoImageIPA = (ImageView) findViewById(R.id.kamdiaoImageIPA);
 
-        microphoneButton = (ImageButton)findViewById(R.id.microphoneButton);
+        microphoneButton = (ImageButton) findViewById(R.id.microphoneButton);
         txtText = (TextView) findViewById(R.id.txtText);
 
-        int id0 = getResources().getIdentifier(kamdiao.pictureword,"drawable",getPackageName());
+        int id0 = getResources().getIdentifier(kamdiao.pictureword, "drawable", getPackageName());
         kamdiaoImage.setBackgroundResource(id0);
 
-        int id1 = getResources().getIdentifier(kamdiao.pictureipa,"drawable",getPackageName());
+        int id1 = getResources().getIdentifier(kamdiao.pictureipa, "drawable", getPackageName());
         kamdiaoImageIPA.setBackgroundResource(id1);
 
         microphoneButton.setOnClickListener(new View.OnClickListener() {
@@ -130,20 +136,34 @@ public class KamdiaoActivity extends ActionBarActivity {
 
                     ArrayList<String> text = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    String sound;
+                    String test;
 
-                    Log.i("TEST KAM", text.get(0));
-                    Log.i("TEST KAM",kamdiao.kamThai);
-                    if (text.get(0).equals(kamdiao.kamThai)){
-                     //   setContentView(R.layout.activity_popup_true);
-
-                        Log.i("TEST KAM", "true");
-
-                    }else {
-                      //  setContentView(R.layout.activity_popup_false);
-                        Log.i("TEST KAM", "false");
+                    try {
+                        sound = text.get(0).trim();
+                        test = URLDecoder.decode(kamdiao.kamThai.trim(), "UTF-8");
+                    } catch (Exception e) {
+                        Log.d("Cannot Decode", "ERROR");
+                        sound = text.get(0);
+                        test = kamdiao.kamThai;
                     }
 
 
+//                    Log.i("testkam", test+";");
+//                    Log.i("testsound", sound+";");
+//
+//                    Log.i("compare", Integer.toString(sound.compareTo(test)));
+//                    Log.i("compare always true", Integer.toString(sound.compareToIgnoreCase(sound)));
+
+                    if (test.equalsIgnoreCase(sound)) {
+                       setContentView(R.layout.activity_popup_true);
+
+                        //Log.i("TEST KAM", "true");
+
+                    } else {
+                        setContentView(R.layout.activity_popup_false);
+                        //Log.i("TEST KAM", "false");
+                    }
                 }
                 break;
 
@@ -153,7 +173,6 @@ public class KamdiaoActivity extends ActionBarActivity {
     }
 
 
-
-    }
+}
 
 

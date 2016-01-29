@@ -56,6 +56,7 @@
             android:label="@string/title_activity_kamgroup" />
         <activity
             android:name=".PopupTrue"
+            android:theme="@style/AppTheme.CustomTheme"
             android:label="@string/title_activity_popup_true" />
         <activity
             android:name=".PopupFalse"
