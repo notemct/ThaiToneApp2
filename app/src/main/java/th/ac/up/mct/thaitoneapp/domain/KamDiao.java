@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class KamDiao extends Model {
 
-    @Column(name = "KamThai")
+    @Column(name = "Word")
     public String kamThai;
 
 
@@ -27,6 +27,7 @@ public class KamDiao extends Model {
     @Column(name = "SoundTH")
     public  String soundth;
 
+
     public static List<KamDiao> getAll(){
         return new Select().from(KamDiao.class).execute();
     }
@@ -34,5 +35,6 @@ public class KamDiao extends Model {
     public static KamDiao get(long id){
         return new Select().from(KamDiao.class).where("Id = ?",id).executeSingle();
     }
+
 
 }

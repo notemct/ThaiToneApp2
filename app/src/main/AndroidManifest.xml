@@ -7,7 +7,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar" >
+        android:theme="@style/Theme.AppCompat.NoActionBar">
         <meta-data
             android:name="AA_DB_NAME"
             android:value="thaitone.db" />
@@ -53,7 +53,13 @@
             android:label="@string/title_activity_kamku" />
         <activity
             android:name=".KamgroupActivity"
-            android:label="@string/title_activity_kamgroup"></activity>
+            android:label="@string/title_activity_kamgroup" />
+        <activity
+            android:name=".PopupTrue"
+            android:label="@string/title_activity_popup_true" />
+        <activity
+            android:name=".PopupFalse"
+            android:label="@string/title_activity_popup_false"></activity>
     </application>
 
 </manifest>

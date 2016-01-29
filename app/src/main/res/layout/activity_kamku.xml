@@ -57,6 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
             android:id="@+id/kamkuImageIPA" />
 
         <LinearLayout
@@ -66,14 +67,14 @@
             android:layout_height="wrap_content">
 
             <ImageButton
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:background="@drawable/speker3"
                 android:id="@+id/speakButtonSentence" />
 
             <ImageButton
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:background="@drawable/mile3"
                 android:id="@+id/microphoneButton" />
         </LinearLayout>

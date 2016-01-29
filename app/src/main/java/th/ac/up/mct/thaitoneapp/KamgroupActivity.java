@@ -79,7 +79,7 @@ public class KamgroupActivity extends ActionBarActivity {
 
 
         ImageView kamgroupImage = (ImageView) findViewById(R.id.kamgroupImage);
-        ImageView kamgroupImageIPA = (ImageView)findViewById(R.id.kamkuImageIPA);
+        ImageView kamgroupImageIPA = (ImageView)findViewById(R.id.kamgroupImageIPA);
 
         ImageButton spekerButton  = (ImageButton)findViewById(R.id.spekerButton);
         microphoneButton = (ImageButton)findViewById(R.id.microphoneButton);
@@ -93,8 +93,8 @@ public class KamgroupActivity extends ActionBarActivity {
         int id0 = getResources().getIdentifier(kamGroup.pictureword, "drawable", getPackageName());
         kamgroupImage.setBackgroundResource(id0);
 
-       // int id1 = getResources().getIdentifier(kamGroup.pictureipa,"drawable",getPackageName());
-        //kamgroupImageIPA.setBackgroundResource(id1);
+        int id1 = getResources().getIdentifier(kamGroup.pictureipa,"drawable",getPackageName());
+        kamgroupImageIPA.setBackgroundResource(id1);
 
         microphoneButton.setOnClickListener(new View.OnClickListener() {
             @Override

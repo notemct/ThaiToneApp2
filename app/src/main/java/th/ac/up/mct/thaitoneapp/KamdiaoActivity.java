@@ -50,8 +50,11 @@ public class KamdiaoActivity extends ActionBarActivity {
         setContentView(R.layout.activity_kamdiao);
 
         Intent i = getIntent();
-        final long  kamdiaoId = i.getLongExtra("KAMDIAO_ID", 0);
+        long  kamdiaoId = i.getLongExtra("KAMDIAO_ID", 0);
         kamdiao = KamDiao.get(kamdiaoId);
+        Log.i("kamdiaoid",Long.toString(kamdiaoId));
+        Log.i("TEST KAM",kamdiao.kamThai);
+
         //Sound
         spekerButton = (ImageButton)findViewById(R.id.spekerButton);
         spekerButton.setOnClickListener(new View.OnClickListener() {
@@ -128,7 +131,17 @@ public class KamdiaoActivity extends ActionBarActivity {
                     ArrayList<String> text = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 
-                    //txtText.setText(text.get(0));
+                    Log.i("TEST KAM", text.get(0));
+                    Log.i("TEST KAM",kamdiao.kamThai);
+                    if (text.get(0).equals(kamdiao.kamThai)){
+                     //   setContentView(R.layout.activity_popup_true);
+
+                        Log.i("TEST KAM", "true");
+
+                    }else {
+                      //  setContentView(R.layout.activity_popup_false);
+                        Log.i("TEST KAM", "false");
+                    }
 
 
                 }

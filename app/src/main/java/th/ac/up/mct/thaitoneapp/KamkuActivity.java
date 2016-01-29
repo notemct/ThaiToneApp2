@@ -113,8 +113,8 @@ public class KamkuActivity extends ActionBarActivity {
         int id0 = getResources().getIdentifier(kamKu.picture,"drawable",getPackageName());
         kamkuImage.setBackgroundResource(id0);
 
-       // int id1 = getResources().getIdentifier(kamKu.pictureipa,"drawable",getPackageName());
-        //kamkuImageIPA.setBackgroundResource(id1);
+        int id1 = getResources().getIdentifier(kamKu.pictureipa,"drawable",getPackageName());
+        kamkuImageIPA.setBackgroundResource(id1);
 
         microphoneButton.setOnClickListener(new View.OnClickListener() {
             @Override

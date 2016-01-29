@@ -14,4 +14,6 @@
     <string name="title_activity_kamdiao">KamdiaoActivity</string>
     <string name="title_activity_kamku">KamkuActivity</string>
     <string name="title_activity_kamgroup">KamgroupActivity</string>
+    <string name="title_activity_popup_true">PopupTrue</string>
+    <string name="title_activity_popup_false">PopupFalse</string>
 </resources>
