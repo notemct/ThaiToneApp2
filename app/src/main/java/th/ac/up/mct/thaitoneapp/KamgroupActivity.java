@@ -13,9 +13,11 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.net.URLDecoder;
 import java.util.ArrayList;
 
 import th.ac.up.mct.thaitoneapp.domain.KamDiao;
@@ -49,6 +51,13 @@ public class KamgroupActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_kamgroup);
+
+
+        Intent intent = getIntent();
+        long kamkuId = intent.getLongExtra("KAMGROUP_ID", 0);
+        kamGroup = KamGroup.get(kamkuId);
+        Log.i("kamgroupid", Long.toString(kamkuId));
+        Log.i("TEST KAM", kamGroup.word);
 
         //Sound
         spekerButton = (ImageButton)findViewById(R.id.spekerButton);
@@ -86,9 +95,6 @@ public class KamgroupActivity extends ActionBarActivity {
         txtText = (TextView) findViewById(R.id.txtText);
 
 
-        Intent intent = getIntent();
-        long kamkuId = intent.getLongExtra("KAMGROUP_ID", 0);
-        kamGroup = KamGroup.get(kamkuId);
 
         int id0 = getResources().getIdentifier(kamGroup.pictureword, "drawable", getPackageName());
         kamgroupImage.setBackgroundResource(id0);
@@ -133,17 +139,40 @@ public class KamgroupActivity extends ActionBarActivity {
 
                     ArrayList<String> text = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    String sound;
+                    String test;
 
-                    txtText.setText(text.get(0));
-                    //Logger.i
-//                    if(text.get(0).equals("ขา")){
-//
-//                    }else {
-//
-//                    }
-//
+                    try {
+                        sound = text.get(0).trim();
+                        test = URLDecoder.decode(kamGroup.word.trim(), "UTF-8");
 
+                    } catch (Exception e) {
+                        Log.d("Cannot Decode", "ERROR");
+                        sound = text.get(0);
+                        test = kamGroup.word;
+                    }
+                    if (test.equalsIgnoreCase(sound)) {
+                        //setContentView(R.layout.activity_popup_true);
+
+                        LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+                        View popupView = layoutInflater.inflate(R.layout.activity_popup_true, null);
+                        final PopupWindow popupWindowtrue = new PopupWindow(popupView, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
+                        popupWindowtrue.showAsDropDown(popupView, 200, 650);
+
+                        //Log.i("TEST KAM", "true");
+
+                    } else {
+                        //setContentView(R.layout.activity_popup_false);
+
+                        LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+                        View popupView = layoutInflater.inflate(R.layout.activity_popup_false, null);
+                        final PopupWindow popupWindowtrue = new PopupWindow(popupView, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
+                        popupWindowtrue.showAsDropDown(popupView, 200, 650);
+                        //Log.i("TEST KAM", "false");
+                    }
                 }
+
+
                 break;
 
             }

@@ -27,9 +27,6 @@ public class KamdiaoActivity extends ActionBarActivity {
 
     private ImageButton microphoneButton;
     private ImageButton spekerButton;
-    private PopupWindow popupWindowtrue;
-    private PopupWindow popupWindowfalse;
-    private LayoutInflater layoutInflater;
     protected static final int RESULT_SPEECH = 1;
     private TextView txtText;
 
