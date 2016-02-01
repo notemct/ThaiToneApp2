@@ -31,15 +31,19 @@
 
 
     </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/header"
+        android:layout_marginBottom="50dp">
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_below="@+id/header"
         android:gravity="center"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="50dp"
         android:id="@+id/kamdiaoactivityMainLayout">
 
         <ImageView
@@ -81,6 +85,7 @@
             android:id="@+id/txtText" />
 
     </LinearLayout>
+    </ScrollView>
 
 
 
