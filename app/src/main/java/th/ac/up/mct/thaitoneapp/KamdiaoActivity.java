@@ -158,7 +158,7 @@ public class KamdiaoActivity extends ActionBarActivity {
                         LayoutInflater layoutInflater = (LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
                         View popupView = layoutInflater.inflate(R.layout.activity_popup_true,null);
                         final PopupWindow popupWindowtrue = new PopupWindow(popupView, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
-                        popupWindowtrue.showAsDropDown(popupView,200,650);
+                        popupWindowtrue.showAsDropDown(popupView,200,730);
 
                         //Log.i("TEST KAM", "true");
 
@@ -168,7 +168,7 @@ public class KamdiaoActivity extends ActionBarActivity {
                         LayoutInflater layoutInflater = (LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
                         View popupView = layoutInflater.inflate(R.layout.activity_popup_false,null);
                         final PopupWindow popupWindowtrue = new PopupWindow(popupView, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
-                        popupWindowtrue.showAsDropDown(popupView,200,650);
+                        popupWindowtrue.showAsDropDown(popupView,200,730);
                         //Log.i("TEST KAM", "false");
                     }
                 }

@@ -18,6 +18,9 @@ import java.util.List;
 import th.ac.up.mct.thaitoneapp.domain.KamDiaoSet;
 
 public class MainActivity extends ActionBarActivity {
+    private Handler Handler;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,49 +28,20 @@ public class MainActivity extends ActionBarActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
-
         ActiveAndroid.initialize(this);
 
-    }
+        Handler= new Handler();
+        Handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                Intent Intent = new Intent(MainActivity.this, Home.class);
+                startActivity(Intent);
+                finish();
 
 
+            }
+        }, 3000);
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-    public void onClickKamdiao(View v){
-        Intent i = new Intent(getApplicationContext(),KamDiaoSetActivity.class);
-        startActivity(i);
-    }
-    public void onClickKamku(View v){
-        Intent i = new Intent(getApplicationContext(),KamKuSetActivity.class);
-        startActivity(i);
-    }
-    public void onClickKamgroup(View v){
-        Intent i = new Intent(getApplicationContext(),KamGroupSetActivity.class);
-        startActivity(i);
-    }
-    public void onClickSymbol(View v){
-        Intent i = new Intent(getApplicationContext(),SymbolSetActivity.class);
-        startActivity(i);
     }
 }

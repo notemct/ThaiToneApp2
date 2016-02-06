@@ -16,4 +16,5 @@
     <string name="title_activity_kamgroup">KamgroupActivity</string>
     <string name="title_activity_popup_true">PopupTrue</string>
     <string name="title_activity_popup_false">PopupFalse</string>
+    <string name="title_activity_home">Home</string>
 </resources>

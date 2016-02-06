@@ -56,11 +56,14 @@
             android:label="@string/title_activity_kamgroup" />
         <activity
             android:name=".PopupTrue"
-            android:theme="@style/AppTheme.CustomTheme"
-            android:label="@string/title_activity_popup_true" />
+            android:label="@string/title_activity_popup_true"
+            android:theme="@style/AppTheme.CustomTheme" />
         <activity
             android:name=".PopupFalse"
-            android:label="@string/title_activity_popup_false"></activity>
+            android:label="@string/title_activity_popup_false" />
+        <activity
+            android:name=".Home"
+            android:label="@string/title_activity_home"></activity>
     </application>
 
 </manifest>
