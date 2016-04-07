@@ -22,7 +22,7 @@
             android:id="@+id/imageView4" />
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginLeft="5dp"
             android:background="@drawable/bar_group"
@@ -43,6 +43,40 @@
         android:layout_height="match_parent"
         android:id="@+id/KamgroupMainLayout">
 
+        <th.ac.up.mct.thaitoneapp.ui.KamGroupSetButton
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/kamgroupsetImageBtn1" />
+
+        <th.ac.up.mct.thaitoneapp.ui.KamGroupSetButton
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/kamgroupsetImageBtn2" />
+
+        <th.ac.up.mct.thaitoneapp.ui.KamGroupSetButton
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/kamgroupsetImageBtn3" />
+
+        <th.ac.up.mct.thaitoneapp.ui.KamGroupSetButton
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/kamgroupsetImageBtn4" />
+
+        <th.ac.up.mct.thaitoneapp.ui.KamGroupSetButton
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/kamgroupsetImageBtn5" />
     </LinearLayout>
     </ScrollView>
 

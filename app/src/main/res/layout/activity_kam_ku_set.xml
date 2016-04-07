@@ -23,7 +23,7 @@
             android:id="@+id/imageView4" />
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginLeft="5dp"
             android:background="@drawable/bar_ku"
@@ -44,6 +44,26 @@
         android:layout_marginTop="5dp"
         android:id="@+id/KamkuMainLayout">
 
+        <th.ac.up.mct.thaitoneapp.ui.KamKuSetButton
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/kamkusetImageBtn1" />
+
+        <th.ac.up.mct.thaitoneapp.ui.KamKuSetButton
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/kamkusetImageBtn2" />
+
+        <th.ac.up.mct.thaitoneapp.ui.KamKuSetButton
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/kamkusetImageBtn3" />
     </LinearLayout>
     </ScrollView>
 

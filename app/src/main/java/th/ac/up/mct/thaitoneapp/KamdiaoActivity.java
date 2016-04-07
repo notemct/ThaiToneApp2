@@ -162,7 +162,9 @@ public class KamdiaoActivity extends ActionBarActivity {
 
                         //Log.i("TEST KAM", "true");
 
-                    } else {
+
+                    }
+                    else {
                         //setContentView(R.layout.activity_popup_false);
 
                         LayoutInflater layoutInflater = (LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);

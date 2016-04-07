@@ -44,4 +44,6 @@ public class KamDiaoSetButton extends ImageButton {
     public KamDiaoSetButton(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
+
+
 }

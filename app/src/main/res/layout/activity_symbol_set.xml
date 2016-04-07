@@ -22,12 +22,17 @@
             android:id="@+id/imageView4" />
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginLeft="5dp"
             android:background="@drawable/bar_symbol"
             android:id="@+id/imageView5" />
     </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:layout_marginBottom="20dp">
 
     <LinearLayout
         android:orientation="vertical"
@@ -35,15 +40,18 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/header"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:id="@+id/SymbolMainLayout"
         android:gravity="center_horizontal">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/bg_smybol"
             android:id="@+id/imageView6" />
     </LinearLayout>
+</ScrollView>
 
 
 </RelativeLayout>
